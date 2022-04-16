@@ -19,6 +19,9 @@ const theme = {
     sub: "#3B91F5",
     error: "#FF6A3A",
     success: "#4EC28A",
+  },
+  zIndex: {
+    modal: 100
   }
 }
 

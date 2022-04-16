@@ -42,11 +42,5 @@ export const GlobalStyle = () => {
         outline: none;
       }
     }
-
-    svg, path{
-      color: inherit;
-      width: inherit;
-      height: inherit;
-    }
 `}/>)
 }
