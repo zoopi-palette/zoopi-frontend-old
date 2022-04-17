@@ -1,4 +1,5 @@
-import {ThemeProvider as EmotionThemeProvider, ThemeProviderProps} from "@emotion/react"
+import {InterpolationWithTheme, ObjectInterpolation} from "@emotion/core"
+import {ThemeProvider as EmotionThemeProvider} from "@emotion/react"
 
 const palette = {
   "grey-10": "#FDFDFD",
@@ -19,11 +20,18 @@ const theme = {
     sub: "#3B91F5",
     error: "#FF6A3A",
     success: "#4EC28A",
+    white: "#ffffff",
+    black: "#000000",
   },
-  zIndex: {
+  zIndices: {
     modal: 100
   }
-}
+} as const
+
+export type Theme = typeof theme
+
+export type Css = InterpolationWithTheme<Theme>
+export type CssObject = ObjectInterpolation<undefined>
 
 export const ThemeProvider = ({children}: {children: React.ReactNode}) => {
   return (
