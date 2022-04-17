@@ -1,5 +1,5 @@
 module.exports = {
-  "extends": ["next", "next/core-web-vitals"],
+  "extends": ["next", "next/core-web-vitals", "plugin:storybook/recommended"],
   "rules": {
     "indent": ["error", 2],
     "quotes": ["error", "double"],
