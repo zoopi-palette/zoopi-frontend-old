@@ -1,10 +1,11 @@
 import type {NextPage} from "next"
+import {LayoutCenter} from "components/templates/layout-center"
 
 const Home: NextPage = () => {
   return (
-    <div>
+    <LayoutCenter>
       test
-    </div>
+    </LayoutCenter>
   )
 }
 
