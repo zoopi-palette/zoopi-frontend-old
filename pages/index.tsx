@@ -32,6 +32,7 @@ const Home: NextPage = () => {
         font-weight: 700;
         `}>로그인</p>
         <div css={css`flex-direction: column;`}>
+          {/* TODO: input 컴포넌트가 생성되면, form컴포넌트를 생성할 예정 */}
           <form css={formStyled}>
             <label css={labelStyled}>이메일</label>
             <input type={"email"} name="email"></input>
