@@ -39,6 +39,7 @@ export const Button = ({
       width: "100%",
       minWidth: 200,
       height: 56,
+      fontSize: "1rem",
       ...colorAndAppearanceCss,
       ...disabledCss,
     } as CssObject)
