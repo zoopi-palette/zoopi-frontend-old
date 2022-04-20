@@ -1,4 +1,4 @@
-import {css,useTheme} from "@emotion/react"
+import {useTheme} from "@emotion/react"
 import React from "react";
 
 export type LayoutCenterProps = {
@@ -9,26 +9,26 @@ export const LayoutCenter = ({children}: LayoutCenterProps) => {
   const theme = useTheme();
 
   return (
-    <div css={css`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  min-height: 100vh;
-  `}>
-      <div css={css`
-  background-color: ${theme.colors["grey-20"]};
-  justify-content: center;
-  flex-grow:1;
-  padding-top: 72px;
-  padding-bottom: 48px;
-  `}>
+    <div css={{
+      display: "flex",
+      flexDirection: "column",
+      width: "100%",
+      minHeight: "100vh",
+    }}>
+      <div css={{
+        backgroundColor: theme.colors["grey-20"],
+        justifyContent: "center",
+        flexGrow:1,
+        paddingTop: 72,
+        paddingBottom: 48,
+      }}>
         {children}
       </div>
-      <footer css={css`
-    background-color: ${theme.colors["grey-10"]};
-    height: 168px;
-    padding: 31px 0;
-    justify-content: center;
-    `}>Footer</footer>
+      <footer css={{
+        backgroundColor: theme.colors["grey-10"],
+        height: 168,
+        padding: "31 0",
+        justifyContent: "center",
+      }}>Footer</footer>
     </div>
-  )};
+  )}

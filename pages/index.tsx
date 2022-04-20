@@ -1,4 +1,4 @@
-import {css, useTheme} from "@emotion/react";
+import {useTheme} from "@emotion/react";
 import type {NextPage} from "next"
 import Image from "next/image"
 import {Button} from "components/button"
@@ -10,28 +10,28 @@ const Home: NextPage = () => {
   
   const buttonWidth = 386;
 
-  const labelStyled = css`
-  margin-bottom: 7px;
-  font-weight: 400;
-  font-size: 14px;
-  color: ${theme.colors["grey-50"]};
-  `;
+  const labelStyled = {
+    marginBottom: 7,
+    fontWeight: 400,
+    fontSize: 14,
+    color: theme.colors["grey-50"],
+  };
 
-  const formStyled = css`
-  margin-bottom: 32px;
-  flex-direction: column;
-  `
+  const formStyled = {
+    marginBottom: 32,
+    flexDirection: "column",
+  };
 
   return (
     <LayoutCenter>
       <WhiteBox hasShadow>
-        <p css={css`
-        padding-top: 32px;
-        margin-bottom: 40px;
-        font-size: 32px;
-        font-weight: 700;
-        `}>로그인</p>
-        <div css={css`flex-direction: column;`}>
+        <p css={{
+          paddingTop: 32,
+          marginBottom: 40,
+          fontSize: 32,
+          fontWeight: 700,
+        }}>로그인</p>
+        <div css={{flexDirection: "column"}}>
           {/* TODO: input 컴포넌트가 생성되면, form컴포넌트를 생성할 예정 */}
           <form css={formStyled}>
             <label css={labelStyled}>이메일</label>
@@ -41,65 +41,65 @@ const Home: NextPage = () => {
             <label css={labelStyled}>비밀번호</label>
             <div>
               <input type={"password"} name="password"
-                css={css`flex-basis: 90%;`}></input>
+                css={{flexBasis: "90%"}}></input>
               <div>
                 <button>눈</button>
                 <button>X</button>
               </div>
             </div>
           </form>
-          <div css={css`margin-top: 12px;`}>
-            <span css={css`
-            font-weight: 400;
-            font-size: 12px;
-            color: ${theme.colors["grey-60"]};
-            `}>?</span>
-            <button css={css`
-            font-weight: 400;
-            font-size: 12px;
-            color: ${theme.colors["grey-60"]};
-            `}>이메일, 비밀번호가 기억나지 않으세요?</button>
+          <div css={{marginTop: 12}}>
+            <span css={{
+              fontWeight: 400,
+              fontSize: 12,
+              color: theme.colors["grey-60"],
+            }}>?</span>
+            <button css={{
+              fontWeight: 40,
+              fontSize: 12,
+              color: theme.colors["grey-60"],
+            }}>이메일, 비밀번호가 기억나지 않으세요?</button>
           </div>
           <Button 
             color="main" 
             appearance="filled" 
-            css={css`
-            width: ${buttonWidth}px;
-            margin-top: 40px;
-            `}>로그인</Button>
+            css={{
+              width: buttonWidth,
+              marginTop: 40,
+            }}>로그인</Button>
         </div>
-        <p css={css`
-          margin-top: 32px;
-          margin-bottom: 16px;
-          font-weight: 400;
-          font-size: 14px;
-          color: ${theme.colors["grey-50"]};
-          `}>다른 방법으로 로그인</p>
-        <div css={css`flex-direction: column;`}>
-          <Button css={css`
-          width: ${buttonWidth}px;  
-          color: ${theme.colors["black"]};
-          margin-bottom: 8px;
-          background-color: #FEE500;`}>
+        <p css={{
+          marginTop: 32,
+          marginBottom: 16,
+          fontWeight: 400,
+          fontSize: 14,
+          color: theme.colors["grey-50"]
+        }}>다른 방법으로 로그인</p>
+        <div css={{flexDirection: "column"}}>
+          <Button css={{
+            width: buttonWidth,  
+            color: theme.colors["black"],
+            marginBottom: 8,
+            backgroundColor: "#FEE500"}}>
             <span>이미지 </span>
             카카오로 시작하기
           </Button>
-          <Button css={css`
-          width: ${buttonWidth}px;
-          color:white;
-          background-color: #03C75A;`}>
+          <Button css={{
+            width: buttonWidth,
+            color:"white",
+            backgroundColor: "#03C75A"}}>
             <span>이미지 </span>
             네이버로 시작하기
           </Button>
         </div>
-        <button css={css`
-        margin-top: 32px;
-        margin-bottom: 48px;
-        font-weight: 400;
-        font-size: 14px;
-        color: ${theme.colors["grey-60"]};
-        text-decoration-line: underline;
-        `}>아직 회원이 아니신가요?</button>
+        <button css={{
+          marginTop: 32,
+          marginBottom: 48,
+          fontWeight: 400,
+          fontSize: 14,
+          color: theme.colors["grey-60"],
+          textDecorationLine: "underline",
+        }}>아직 회원이 아니신가요?</button>
       </WhiteBox>
     </LayoutCenter>
   )
