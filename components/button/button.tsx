@@ -37,7 +37,7 @@ export const Button = ({
       margin: 0,
       padding: 0,
       width: "100%",
-      minWidth: 200,
+      minWidth: 40,
       height: 56,
       fontSize: "1rem",
       ...colorAndAppearanceCss,
