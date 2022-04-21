@@ -41,17 +41,17 @@ export const FooterBar = () => {
         <ul css={{
           display: "flex",
         }}>
-          <li><Link href="" passHref><a css={link}>헌혈 가이드</a></Link></li>
-          <li><Link href="" passHref><a css={link}>서비스 이용약관</a></Link></li>
-          <li><Link href="" passHref><a css={link}>개인정보 처리방침</a></Link></li>
-          <li><Link href="" passHref><a css={link}>1:1 문의</a></Link></li>
-          <li><Link href="" passHref><a css={link}>광고문의</a></Link></li>
-          <li><Link href="" passHref><a css={link}>공지사항</a></Link></li>
+          <li><Link href="/" passHref><a css={link}>헌혈 가이드</a></Link></li>
+          <li><Link href="/" passHref><a css={link}>서비스 이용약관</a></Link></li>
+          <li><Link href="/" passHref><a css={link}>개인정보 처리방침</a></Link></li>
+          <li><Link href="/" passHref><a css={link}>1:1 문의</a></Link></li>
+          <li><Link href="/" passHref><a css={link}>광고문의</a></Link></li>
+          <li><Link href="/" passHref><a css={link}>공지사항</a></Link></li>
         </ul>
       </div>
       <ul css={{display: "flex",alignItems: "flex-start"}}>
-        <li><Link href="" passHref><a css={{marginRight: 16}}>스토어</a></Link></li>
-        <li><Link href="" passHref><a>스토어</a></Link></li>
+        <li><Link href="/" passHref><a css={{marginRight: 16}}>스토어</a></Link></li>
+        <li><Link href="/" passHref><a>스토어</a></Link></li>
       </ul>
     </footer>
   )

@@ -36,9 +36,9 @@ export const HeaderBar = () => {
         <li>
           <Link href="/" passHref><a css={{width: 80, height: 30, marginRight: 42}}>ZOOPi</a></Link>
         </li>
-        <li><Link href="" passHref><a css={link}>헌혈</a></Link></li>
-        <li><Link href="" passHref><a css={link}>헌혈요청</a></Link></li>
-        <li><Link href="" passHref><a css={link}>인증</a></Link></li>
+        <li><Link href="/" passHref><a css={link}>헌혈</a></Link></li>
+        <li><Link href="/" passHref><a css={link}>헌혈요청</a></Link></li>
+        <li><Link href="/" passHref><a css={link}>인증</a></Link></li>
       </ul>
       <ul css={{display: "flex",alignItems: "center",}}>
         <li><Button color="gray" appearance="outline" css={buttonStyled}>로그인</Button></li>

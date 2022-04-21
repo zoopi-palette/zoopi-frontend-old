@@ -3,13 +3,17 @@ import reset from "emotion-reset"
 
 export const GlobalStyle = () => {
   return (<Global styles={css`
+    @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
     ${reset}
+    
     * {
       box-sizing: border-box;
     }
+
     body {
       width:100%;
       overflow-x:hidden;
+      font-family: 'Spoqa Han Sans Neo', sans-serif;
     }
 
     html {
@@ -42,5 +46,12 @@ export const GlobalStyle = () => {
         outline: none;
       }
     }
+/*     
+    @font-face {
+    font-family: 'SpoqaHanSansNeo';
+    src: url(sdsf.woff2) format('woff2'),
+        url(sdfs.woff) format('woff'),
+        url(sdfsd.ttf) format('truetype');
+    } */
 `}/>)
 }

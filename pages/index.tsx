@@ -65,7 +65,7 @@ const Home: NextPage = () => {
             네이버로 시작하기
           </Button>
           <div css={{marginTop: 16, alignItems: "center"}}>
-            <Link href="" passHref>
+            <Link href="/" passHref>
               <a css={{
                 width: buttonWidth/2,
                 padding: "13px 0",
@@ -77,7 +77,7 @@ const Home: NextPage = () => {
               height: 16,
               color: theme.colors["grey-50"]
             }}></hr>
-            <Link href="" passHref>
+            <Link href="/" passHref>
               <a css={{
                 width: buttonWidth/2,
                 padding: "13px 0",
