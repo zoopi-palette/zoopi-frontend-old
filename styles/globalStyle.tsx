@@ -33,6 +33,7 @@ export const GlobalStyle = () => {
       background: none;
       box-shadow: none;
       cursor: pointer;
+      font-family: 'Spoqa Han Sans Neo', sans-serif;
     }
 
     a {
@@ -46,12 +47,5 @@ export const GlobalStyle = () => {
         outline: none;
       }
     }
-/*     
-    @font-face {
-    font-family: 'SpoqaHanSansNeo';
-    src: url(sdsf.woff2) format('woff2'),
-        url(sdfs.woff) format('woff'),
-        url(sdfsd.ttf) format('truetype');
-    } */
 `}/>)
 }
