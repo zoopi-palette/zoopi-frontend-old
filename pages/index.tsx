@@ -5,22 +5,22 @@ import Image from "next/image"
 import {Button} from "components/button"
 import {LayoutCenter} from "components/templates/layout-center"
 
+const BUTTON_WIDTH = 400;
+
 const Home: NextPage = () => {
   const theme = useTheme();
   
-  const buttonWidth = 400;
-
-  const labelStyled = {
+  const labelCss = {
     marginBottom: 7,
     fontWeight: 400,
     fontSize: 14,
     color: theme.colors["grey-50"],
   };
 
-  const buttonStyled = {
+  const buttonCss = {
     backgroundColor: "transparent",
     border: `1px solid ${theme.colors["grey-40"]}`,
-    width: buttonWidth,  
+    width: BUTTON_WIDTH,  
     color: theme.colors["grey-90"],
     marginTop: 16,
     fontWeight: 700,
@@ -39,14 +39,14 @@ const Home: NextPage = () => {
             marginBottom: 32, 
             display: "flex",
             flexDirection: "column"}}>
-            <label css={labelStyled}>이메일</label>
+            <label css={labelCss}>이메일</label>
             <input type={"email"} name="email" placeholder="sample@example.co.kr"></input>
           </form>
           <form css={{
             marginBottom: 32, 
             display: "flex",
             flexDirection: "column"}}>
-            <label css={labelStyled}>비밀번호</label>
+            <label css={labelCss}>비밀번호</label>
             <input type={"password"} name="password"></input>
           </form>
         </div>
@@ -56,18 +56,18 @@ const Home: NextPage = () => {
             appearance="filled"
             css={{fontWeight: 700,}}
           >로그인</Button>
-          <Button css={buttonStyled}>
+          <Button css={buttonCss}>
             <div css={{position: "absolute"}}>이미지</div>
             카카오로 시작하기
           </Button>
-          <Button css={buttonStyled}>
+          <Button css={buttonCss}>
             <div css={{position: "absolute"}}>이미지</div>
             네이버로 시작하기
           </Button>
           <div css={{marginTop: 16, alignItems: "center"}}>
             <Link href="/" passHref>
               <a css={{
-                width: buttonWidth/2,
+                width: BUTTON_WIDTH/2,
                 padding: "13px 0",
                 fontSize: 14,
                 textAlign: "center",
@@ -79,7 +79,7 @@ const Home: NextPage = () => {
             }}></hr>
             <Link href="/" passHref>
               <a css={{
-                width: buttonWidth/2,
+                width: BUTTON_WIDTH/2,
                 padding: "13px 0",
                 fontSize: 14,
                 textAlign: "center",

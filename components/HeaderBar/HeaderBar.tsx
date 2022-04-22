@@ -6,7 +6,7 @@ import {Button} from "components/button";
 export const HeaderBar = () => {
   const theme = useTheme();
 
-  const link={
+  const linkCss={
     color: theme.colors["grey-90"],
     fontSize: 18,
     padding: "0 16px",
@@ -15,7 +15,7 @@ export const HeaderBar = () => {
     }
   }
 
-  const buttonStyled = {
+  const buttonCss = {
     height: 40,
     width: 96,
     marginLeft: 16,
@@ -36,13 +36,13 @@ export const HeaderBar = () => {
         <li>
           <Link href="/" passHref><a css={{width: 80, height: 30, marginRight: 42}}>ZOOPi</a></Link>
         </li>
-        <li><Link href="/" passHref><a css={link}>헌혈</a></Link></li>
-        <li><Link href="/" passHref><a css={link}>헌혈요청</a></Link></li>
-        <li><Link href="/" passHref><a css={link}>인증</a></Link></li>
+        <li><Link href="/" passHref><a css={linkCss}>헌혈</a></Link></li>
+        <li><Link href="/" passHref><a css={linkCss}>헌혈요청</a></Link></li>
+        <li><Link href="/" passHref><a css={linkCss}>인증</a></Link></li>
       </ul>
       <ul css={{display: "flex",alignItems: "center",}}>
-        <li><Button color="gray" appearance="outline" css={buttonStyled}>로그인</Button></li>
-        <li><Button color="main" appearance="outline" css={{...buttonStyled, color: theme.colors.main}}>회원가입</Button></li>
+        <li><Button color="gray" appearance="outline" css={buttonCss}>로그인</Button></li>
+        <li><Button color="main" appearance="outline" css={{...buttonCss, color: theme.colors.main}}>회원가입</Button></li>
       </ul>
     </header>
   )
