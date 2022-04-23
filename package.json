@@ -9,7 +9,7 @@
     "lint": "next lint",
     "lint-fix": "next lint --fix",
     "ts-check": "tsc --project ./tsconfig.json",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook"
   },
   "dependencies": {

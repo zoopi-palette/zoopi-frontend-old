@@ -3,8 +3,8 @@ import React from "react"
 import {ReactSVG} from "react-svg"
 
 export type IconProps = {
-  color?: string
   name: IconName
+  color?: string
   size?: number
 }
 
@@ -34,7 +34,7 @@ export const Icon = ({
       color: color ? color : theme.colors["grey-90"],
     }}>
       <ReactSVG
-        src={`/public/icons/${name}.svg`}
+        src={`/icons/${name}.svg`}
         beforeInjection={(handleBeforeInjection)}
         style={reactSvgStyle}
       />
