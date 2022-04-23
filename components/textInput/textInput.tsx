@@ -5,25 +5,19 @@ import {Css, CssObject} from "styles/theme"
 
 export type TextInputProps = {
   children?: ReactNode
-  className?: string
-  appearance?: ButtonAppearance
   value: string
   placeholder?: string
   onChange?: (value: string, event?: ChangeEvent<HTMLInputElement>)=>void
   onBlur?: FocusEventHandler<HTMLInputElement>
   onFocus?: FocusEventHandler<HTMLInputElement>
   label?: string
-  autoFocus?: boolean
   type?: "email" | "password" | "text";
   clearDisabled?: boolean
   right?: ReactNode
 }
 
-export type ButtonAppearance = "filled" | "outline"
-
 export const TextInput = ({
   children,
-  appearance = "filled",
   onChange,
   onBlur,
   onFocus,
@@ -31,6 +25,7 @@ export const TextInput = ({
   label,
   clearDisabled = false,
   right,
+  type = "text",
   ...rest
 }: TextInputProps) => {
   const theme = useTheme()
@@ -89,7 +84,7 @@ export const TextInput = ({
       })}>{label}</span>
       <input
         ref={inputRef}
-        type={"text"}
+        type={type}
         {...rest}
         value={value || localValue}
         onChange={handleChange}
