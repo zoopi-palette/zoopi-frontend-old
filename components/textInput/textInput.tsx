@@ -10,7 +10,7 @@ export type TextInputProps = {
   onChange?: (value: string, event?: ChangeEvent<HTMLInputElement>)=>void
   onBlur?: FocusEventHandler<HTMLInputElement>
   onFocus?: FocusEventHandler<HTMLInputElement>
-  label?: string
+  label?: string | null
   type?: "email" | "password" | "text";
   clearDisabled?: boolean
   right?: ReactNode
@@ -77,11 +77,15 @@ export const TextInput = ({
       width: "100%",
       position: "relative"
     }}>
-      <span css={theme => ({
-        fontSize: "0.875rem",
-        color: theme.colors["grey-50"],
-        marginBottom: "7px"
-      })}>{label}</span>
+      {label && (
+        <span css={theme => ({
+          fontSize: "0.875rem",
+          color: theme.colors["grey-50"],
+          marginBottom: "7px"
+        })}>
+          {label}
+        </span>
+      )}
       <input
         ref={inputRef}
         type={type}
