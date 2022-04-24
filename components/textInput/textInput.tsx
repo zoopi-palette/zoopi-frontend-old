@@ -32,8 +32,6 @@ export const TextInput = ({
 
   const [localValue, setLocalValue] = useState("")
   
-  const inputRef = useRef<HTMLInputElement>(null)
-
   const css: Css = useMemo(()=>{
     return ({
       fontSize: "1rem",
@@ -87,7 +85,6 @@ export const TextInput = ({
         </span>
       )}
       <input
-        ref={inputRef}
         type={type}
         {...rest}
         value={value || localValue}
@@ -99,15 +96,17 @@ export const TextInput = ({
       <div css={{position: "absolute", right: 0, bottom: 6}}>
         {right}
         {clearDisabled ? null : (
-          <span
+          <button
             onClick={handleClearClick}
             css={{
               display: (value || localValue) ? "inline-flex" : "none",
-              cursor: "pointer"
+              cursor: "pointer",
+              paddingRight: 2, 
+              paddingLeft: 2
             }}
           >
             <Icon name={"close-circle"} color={theme.colors["grey-50"]}/>
-          </span>
+          </button>
         )}
       </div>
     </label>
