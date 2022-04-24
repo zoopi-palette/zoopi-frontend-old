@@ -1,7 +1,7 @@
 import {ComponentStory, ComponentMeta} from "@storybook/react";
 import React from "react";
 
-import {Icon, IconName} from "./icon";
+import {Icon, IconName} from "./Icon";
 
 const iconNames: IconName[] = ["arrow-back", "arrow-right", "check-circle", "circle", "close-circle", "close", "eye", "search"]
 
