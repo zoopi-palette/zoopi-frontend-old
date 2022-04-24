@@ -2,8 +2,8 @@ import {useTheme} from "@emotion/react";
 import type {NextPage} from "next"
 import Link from "next/Link"
 import Image from "next/image"
-import {Button} from "components/button"
-import {LayoutCenter} from "components/templates/layout-center"
+import {Button} from "components/Button"
+import {LayoutCenter} from "components/LayoutCenter"
 
 const BUTTON_WIDTH = 400;
 

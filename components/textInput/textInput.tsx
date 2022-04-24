@@ -1,6 +1,6 @@
 import {useTheme} from "@emotion/react"
 import {ChangeEvent, ChangeEventHandler, FocusEventHandler, ReactNode, useCallback, useEffect, useMemo, useRef, useState} from "react"
-import {Icon} from "components/icon"
+import {Icon} from "components/Icon"
 import {Css, CssObject} from "styles/theme"
 
 export type TextInputProps = {

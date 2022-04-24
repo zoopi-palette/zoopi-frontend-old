@@ -1,7 +1,7 @@
 import {ComponentStory, ComponentMeta} from "@storybook/react";
 import React from "react";
 
-import {Button, ButtonAppearance, ButtonColor} from "./button";
+import {Button, ButtonAppearance, ButtonColor} from "./Button";
 
 const buttonColors: ButtonColor[] = ["main", "gray"] 
 const buttonApperances: ButtonAppearance[] = ["filled", "outline"] 

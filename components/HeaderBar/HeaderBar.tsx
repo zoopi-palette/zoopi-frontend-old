@@ -1,7 +1,7 @@
 import {useTheme} from "@emotion/react"
 import Link from "next/Link"
 import React from "react"
-import {Button} from "components/button";
+import {Button} from "components/Button";
 
 export const HeaderBar = () => {
   const theme = useTheme();

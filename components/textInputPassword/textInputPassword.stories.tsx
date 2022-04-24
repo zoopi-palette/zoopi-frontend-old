@@ -1,7 +1,7 @@
 import {ComponentStory, ComponentMeta} from "@storybook/react";
 import React from "react";
 
-import {TextInputPassword} from "./textInputPassword";
+import {TextInputPassword} from "./TextInputPassword";
 
 export default {
   title: "atoms/TextInputPassword",
