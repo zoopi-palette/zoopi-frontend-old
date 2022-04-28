@@ -4,7 +4,7 @@ import {RootState} from "modules/store";
 import {SET_INITIALIZED, SET_USER_ID} from "modules/user/user";
 
 const User = () => {
-  const user = useSelector((state: RootState) => state.user);
+  const user = useSelector((state: RootState) => state.userReducer);
   const dispatch = useDispatch();
 
   useEffect(() => {
