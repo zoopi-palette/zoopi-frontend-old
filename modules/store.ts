@@ -1,4 +1,5 @@
 import {configureStore} from "@reduxjs/toolkit";
+import {logger} from "redux-logger";
 import createSagaMiddleware from "redux-saga";
 import {userSlice} from "./user/user";
 
@@ -11,7 +12,7 @@ const reducers = {
 
 export const store = configureStore({
   reducer: reducers,
-  middleware: [sagaMiddleware],
+  middleware: [sagaMiddleware, logger],
 });
 
 export function* rootSaga() {
