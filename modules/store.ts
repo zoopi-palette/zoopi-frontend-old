@@ -1,17 +1,9 @@
-import { applyMiddleware, combineReducers, compose, Middleware, Store } from "@reduxjs/toolkit";
-import { composeWithDevTools } from "@reduxjs/toolkit/dist/devtoolsExtension";
-import { createWrapper } from "next-redux-wrapper";
-import { createStore } from "redux";
-import { logger } from "redux-logger";
-import createSagaMiddleware, { Task } from "redux-saga";
-import { userSlice } from "./user/user";
-
-const reducers = {
-  userReducer: userSlice.reducer,
-  // 리듀서 추가
-}
-
-const rootReducer = combineReducers(reducers);
+import {applyMiddleware, combineReducers, compose, configureStore, Middleware, Store} from "@reduxjs/toolkit";
+import {composeWithDevTools} from "@reduxjs/toolkit/dist/devtoolsExtension";
+import {createWrapper} from "next-redux-wrapper";
+import {logger} from "redux-logger";
+import createSagaMiddleware, {Task} from "redux-saga";
+import {userReducer} from "./user/user";
 
 // ref: https://github.com/vercel/next.js/tree/canary/examples/with-redux-saga
 // ref: https://github.com/kirill-konshin/next-redux-wrapper#usage-with-redux-saga
@@ -26,19 +18,24 @@ function* rootSaga() {
 
 const bindMiddleware = (middlewares: Middleware<any, any, any>[]) => {
   if (process.env.NODE_ENV !== "production") {
-    const { composeWithDevTools } = require("redux-devtools-extension")
+    const {composeWithDevTools} = require("redux-devtools-extension")
     return composeWithDevTools(applyMiddleware(...middlewares))
   }
   return applyMiddleware(...middlewares)
 }
 
-export const makeStore = () => {
+const makeStore = () => {
   const sagaMiddleware = createSagaMiddleware();
-  const store = createStore(rootReducer, bindMiddleware([sagaMiddleware, logger])) as SagaStore
-  store.sagaTask = sagaMiddleware.run(rootSaga)
+  const store: SagaStore = configureStore({
+    reducer: {
+      user: userReducer,
+    },
+    devTools: process.env.NODE_ENV !== "production",
+    middleware: [sagaMiddleware, logger],
+  });
+  store.sagaTask = sagaMiddleware.run(rootSaga);
   return store
 }
 
-export const wrapper = createWrapper<Store<RootState>>(makeStore, { debug: true })
-
-export type RootState = ReturnType<typeof rootReducer>;
+export type RootStore = ReturnType<typeof makeStore>;
+export const wrapper = createWrapper<RootStore>(makeStore, {debug: true});
