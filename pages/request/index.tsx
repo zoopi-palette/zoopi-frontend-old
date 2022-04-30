@@ -45,10 +45,8 @@ const Request: NextPage = () => {
     const locationBtn = "현재 위치 추적하는 아이콘, 추가 예정";
 
     const getUserLocation = new naver.maps.CustomControl(locationBtn, {
-      position: naver.maps.Position.TOP_LEFT,
+      position: naver.maps.Position.BOTTOM_RIGHT,
     });
-
-    getUserLocation.setMap(map);
 
     // 마커로 위치 표시
     // const marker = new naver.maps.Marker({
@@ -65,6 +63,10 @@ const Request: NextPage = () => {
     //     // anchor: new naver.maps.Point(12, 34),
     //   },
     // });
+
+    naver.maps.Event.once(map, "init", function () {
+      getUserLocation.setMap(map);
+    });
   }, [userLocation]);
 
   const mapStyle = {
