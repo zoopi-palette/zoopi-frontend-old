@@ -49,20 +49,20 @@ const Request: NextPage = () => {
     });
 
     // 마커로 위치 표시
-    // const marker = new naver.maps.Marker({
-    //   position: new naver.maps.LatLng(
-    //     userLocation.latitude,
-    //     userLocation.longitude
-    //   ),
-    //   map,
-    //   icon: {
-    //     // url: ZoopiMarker,
-    //     // size: new naver.maps.Size(25, 34),
-    //     // scaledSize: new naver.maps.Size(25, 34),
-    //     // origin: new naver.maps.Point(0, 0),
-    //     // anchor: new naver.maps.Point(12, 34),
-    //   },
-    // });
+    const marker = new naver.maps.Marker({
+      position: new naver.maps.LatLng(
+        userLocation.latitude,
+        userLocation.longitude
+      ),
+      map,
+      // icon: {
+      // url: ZoopiMarker,
+      // size: new naver.maps.Size(25, 34),
+      // scaledSize: new naver.maps.Size(25, 34),
+      // origin: new naver.maps.Point(0, 0),
+      // anchor: new naver.maps.Point(12, 34),
+      // },
+    });
 
     naver.maps.Event.once(map, "init", function () {
       getUserLocation.setMap(map);
