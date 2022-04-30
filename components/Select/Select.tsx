@@ -26,6 +26,8 @@ export const Select = ({
         paddingRight: 11,
         paddingBottom: 13,
         paddingLeft: 12,
+        marginLeft: 8,
+        marginRight: 8,
       }}
     >
       <select
