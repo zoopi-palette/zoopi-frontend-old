@@ -1,22 +1,15 @@
-import {useTheme} from "@emotion/react";
-import {Button} from "components/Button";
-import Select from "components/Select/Select";
 import React from "react";
+import Select from "components/Select/Select";
 
-const SearchBar = () => {
-  const theme = useTheme();
-
-  const hrColor = "##DDDDDD";
+export const SearchBar = () => {
+  const hrColor = "#DDDDDD";
 
   return (
     <header
       css={{
         height: 68,
         padding: 12,
-        display: "flex",
-        justifyContent: "space-between",
         alignItems: "center",
-        borderBottom: `1px solid ${theme.colors["grey-30"]}`,
       }}
     >
       <input type="text" placeholder="검색어를 입력해 주세요" />
@@ -27,5 +20,3 @@ const SearchBar = () => {
     </header>
   );
 };
-
-export default SearchBar;
