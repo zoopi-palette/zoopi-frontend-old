@@ -1,19 +1,40 @@
 import React from "react";
 import {HeaderBar} from "components/HeaderBar";
 import {SearchBar} from "components/SearchBar";
+import {Stack} from "components/Stack";
 
-const LayoutMap = () => {
+type LayoutMapProps = {
+  children: React.ReactNode;
+};
+
+const LayoutMap = ({children}: LayoutMapProps) => {
   return (
     <div
       css={{
         display: "flex",
         flexDirection: "column",
         width: "100%",
-        minHeight: "100vh",
+        // // height: "100vh",
+        // minHeight: 100,
       }}
     >
       <HeaderBar />
       <SearchBar />
+      <div css={{flex: 1}}>
+        <Stack
+          spacing="29px"
+          divider={<hr css={{width: "88%", color: "#DDDDDD"}} />}
+        >
+          <div css={{height: 200}}>item2</div>
+          <div css={{height: 200}}>item2</div>
+          <div css={{height: 200}}>item2</div>
+          <div css={{height: 200}}>item2</div>
+          <div css={{height: 200}}>item2</div>
+        </Stack>
+
+        {/* naver map */}
+        <div css={{width: "100%"}}>{children}</div>
+      </div>
     </div>
   );
 };
