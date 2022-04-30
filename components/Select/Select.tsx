@@ -8,7 +8,13 @@ export type SelectProps = {
   onChange?: ChangeEventHandler<HTMLSelectElement>;
 };
 
-const Select = ({children, id, name, onChange, ...rest}: SelectProps) => {
+export const Select = ({
+  children,
+  id,
+  name,
+  onChange,
+  ...rest
+}: SelectProps) => {
   return (
     <div
       css={{
@@ -34,5 +40,3 @@ const Select = ({children, id, name, onChange, ...rest}: SelectProps) => {
     </div>
   );
 };
-
-export default Select;

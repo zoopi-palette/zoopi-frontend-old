@@ -1,5 +1,5 @@
 import {ComponentMeta, ComponentStory} from "@storybook/react";
-import Select from "./Select";
+import {Select} from "./Select";
 
 export default {
   title: "atoms/Select",
