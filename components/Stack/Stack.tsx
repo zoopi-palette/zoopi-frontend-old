@@ -34,19 +34,22 @@ export const Stack = ({
           css={{
             display: "flex",
             flexDirection: direction,
-            // marginBottom: spacing,
             width: 400,
             padding: 24,
             overflowY: "scroll",
-            // flex: 1,
           }}
         >
           {React.Children.map(children, (child) => {
             return (
-              <>
+              <div
+                css={{
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+              >
                 {child}
                 {divider}
-              </>
+              </div>
             );
           })}
         </div>

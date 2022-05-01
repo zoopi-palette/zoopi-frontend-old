@@ -14,13 +14,12 @@ const LayoutMap = ({children}: LayoutMapProps) => {
         display: "flex",
         flexDirection: "column",
         width: "100%",
-        // // height: "100vh",
-        // minHeight: 100,
+        height: "100vh",
       }}
     >
       <HeaderBar />
       <SearchBar />
-      <div css={{flex: 1}}>
+      <div css={{flex: 1, height: 10}}>
         <Stack
           spacing="29px"
           divider={<hr css={{width: "88%", color: "#DDDDDD"}} />}
