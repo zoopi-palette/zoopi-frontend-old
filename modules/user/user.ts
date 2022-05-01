@@ -31,4 +31,4 @@ export const {
   SET_USER_ID, SET_INITIALIZED
 } = userSlice.actions;
 
-export const userReducer = userSlice.reducer;
+export default userSlice.reducer;
