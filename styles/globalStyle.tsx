@@ -12,6 +12,7 @@ export const GlobalStyle = () => {
 
     body {
       width:100%;
+      line-height: 1.5;
       overflow-x:hidden;
       font-family: 'Spoqa Han Sans Neo', sans-serif;
     }

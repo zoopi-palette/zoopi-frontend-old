@@ -1,5 +1,5 @@
 import {useTheme} from "@emotion/react"
-import React, {useCallback, MouseEventHandler, ReactNode} from "react"
+import React, {useCallback, MouseEventHandler, ReactNode, useRef} from "react"
 import {Button} from "components/Button"
 import {Icon} from "components/Icon"
 
@@ -30,17 +30,19 @@ export const Modal = ({
 }: ModalProps) => {
   const theme = useTheme()
 
+  const modalRef = useRef<HTMLDivElement>(null)
+
   const handleClickOutside: MouseEventHandler<HTMLDivElement> = useCallback((event)=>{
+    const isClickedInside = (event.target instanceof Node) && modalRef.current?.contains(event.target)
+
+    if (isClickedInside) return;
+    
     onClose()
   },[onClose])
 
   const handleClickClose: MouseEventHandler<HTMLDivElement> = useCallback((event)=>{
     onClose()
   },[onClose])
-
-  const handleClickModal: MouseEventHandler<HTMLDivElement> = useCallback((event)=>{
-    event.stopPropagation()
-  },[])
 
   return (
     <article 
@@ -56,7 +58,6 @@ export const Modal = ({
       }}
     >
       <div 
-        onClick={handleClickModal}
         css={{
           display: "flex", 
           flexDirection:"column", 
@@ -69,13 +70,15 @@ export const Modal = ({
           padding: 16
         }}
       >
-        <div css={{
-          width: "100%", 
-          display: "flex", 
-          justifyContent: "space-between",
-          alignItems: "center", 
-          marginBottom: 16,
-        }}>
+        <div
+          ref={modalRef} 
+          css={{
+            width: "100%", 
+            display: "flex", 
+            justifyContent: "space-between",
+            alignItems: "center", 
+            marginBottom: 16,
+          }}>
           <div css={{fontSize: "1.125rem", fontWeight: "bold"}}>
             {title}
           </div>
