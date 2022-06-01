@@ -38,7 +38,7 @@ export const HeaderBar = () => {
         </li>
         <li><Link href="/" passHref><a css={linkCss}>헌혈</a></Link></li>
         <li><Link href="/" passHref><a css={linkCss}>헌혈요청</a></Link></li>
-        <li><Link href="/" passHref><a css={linkCss}>인증</a></Link></li>
+        <li><Link href="/certification" passHref><a css={linkCss}>인증</a></Link></li>
       </ul>
       <ul css={{display: "flex",alignItems: "center",}}>
         <li><Button color="gray" appearance="outline" css={buttonCss}>로그인</Button></li>

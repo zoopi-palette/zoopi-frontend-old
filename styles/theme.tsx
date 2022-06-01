@@ -22,6 +22,7 @@ const theme = {
     success: "#4EC28A",
     white: "#ffffff",
     black: "#000000",
+    bg: "#F5F5F7",
   },
   zIndices: {
     modal: 100
